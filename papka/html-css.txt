@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>История веба - WWW</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+  <style>
+    .normal {
+      background-color: #fff; 
+      color: #000; 
+      font-weight: normal; 
+    }
+    .alternative {
+      background-color: rgb(145, 32, 153); 
+      color: #fff;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div><img src="image.jpg" name="pic1" id="img1" style="position:absolute; top:200px; left: 500px; width:150; height:150; z-index: 0; "></div>
+<div><img src="image2.jpg" name="pic3" id="img3"  style="position:absolute; top:300px; left: 600px; width:150; height:150; z-index: 2; "></div>
+<div><img src="image1.jpg" name="pic2" id="img2" style="position:absolute; top:250px; left: 550px; width:150; height:150; z-index: 1; "></div>
+<div><INPUT type="button" value="AnVisible" style="position:absolute; top: 450px; left: 500px; width: 70; height: 30; background-color: rgb(153, 153, 153);" OnClick="pic2.style.visibility='hidden';"></div>
+<div><INPUT type="button" value="Visible" style="position:absolute; top: 450px; left: 600px; width: 70; height: 30; background-color: rgb(153, 153, 153);" OnClick="pic2.style.visibility='visible'"></div>
+<div><INPUT type="button" value="rename" style="position:absolute; top: 450px; left: 700px; width: 70; height: 30; background-color: rgb(153, 153, 153);" OnClick="var buf =pic1.style.zIndex;pic1.style.zIndex=pic3.style.zIndex; pic3.style.zIndex=buf "></div>
+&nbsp;<div class="text">
+    <main>
+       <h1 onMouseOver="changeStat()" onmouseout="change()">Создание WWW</h1>
+        <p onMouseOver="style='color: rgb(125, 99, 34); font-weight: bold;'" onMouseOut="style='color: #000; font-weight: normal;'">WWW (Всемирная паутина) является самой популярной службой Интернета, но ее нельзя отождествлять со Всемирной паутиной. Идея ее создания была реализована за четыре года (1989-1992гг.) программистом Тимоти Джон Бернерс-Ли и его коллегами. Хотя, как это часто бывает, сделано это было вовсе не на пустом месте. Например, понятие "гипертекст" первым придумал американский ученый Тед Нельсон еще в 1965 году. Датой же рождения Интернета счиается 29 октября 1969 года, а писатели фантасты задолго предсказывали появление нечто подобного.</p>
+  
+        </details>&nbsp;<h2>Хронология становления веба</h2>
+          <p onmouseover="changeParagraphStyle(this)" onmouseout="restoreParagraphStyle(this)" class="news"><span class="date">25.12.1990 - </span>Первый в мире браузер</p>
+          <p class="news"><span class="date">06.08.1991 - </span>Первый в мире сайт</p>
+          <p class="news"><span class="date">01.10.1994 - </span>World Wide Web Consortium (W3C)</p>
+          <p class="news"><span class="date">17.10.1994 - </span>Perl 5</p>
+          <p class="news"><span class="date">Начало 1995 года - </span>Apache HTTP Server</p>
+          <p class="news"><span class="date">23.05.1995 - </span>MySQL</p>
+          <p class="news"><span class="date">08.06.1995 - </span>Personal Home Page (PHP 1.0)</p>
+          <p class="news"><span class="date">17.12.1996 - </span>Cascading Style Sheets (CSS1)</p>
+    
+<table border="1" width="600">
+        <tr>
+          <td onmouseover="applyAlternativeStyle(this)" onmouseout="restoreNormalStyle(this)">Часть 1</td>
+          <td onmouseover="applyAlternativeStyle(this)" onmouseout="restoreNormalStyle(this)">Ячейка 2</td>
+        </tr>
+        <tr>
+          <td onmouseover="applyAlternativeStyle(this)" onmouseout="restoreNormalStyle(this)">Ячейка три</td>
+          <td onmouseover="applyAlternativeStyle(this)" onmouseout="restoreNormalStyle(this)">Номер 4</td>
+        </tr>
+</table>
+</main>
+  </div>
+<div><SCRIPT> document.write("Изменено " +document.lastModified) </SCRIPT> </div>
+<div><INPUT type="button" value="Window" style="position: relative; top: 30px; right:0px; width: 80px; height: 30px; background-color: rgb(247, 153, 153);" OnClick="WindStat()"></div>
+<div><INPUT type="button" value="Navigator" style="position: relative; top: 0px; right:-100px; width: 80px; height: 30px; background-color: rgb(216, 153, 247);" 
+OnClick=" alert('Тип браузера: '+ navigator.appCodeName + '\n' +
+                          'Название браузера: ' + navigator.appName + '\n' +
+                          'Версия браузера: ' + navigator.appVersion + '\n' +
+                          'Платформа: ' + navigator.platform + '\n' +
+                          'Язык браузера: ' + navigator.language + '\n');"></div>
+<div><INPUT type="button" value="Location" style="position: relative; top: 30px; right:0px; width: 80px; height: 30px; background-color: rgb(163, 153, 247);" 
+		     OnClick="alert('Имя пользователя: ' + window.navigator.userAgent + '\n' +
+                    'Адрес загруженного документа: ' + window.location.href);"></div>
+<div><INPUT type="button" value="Screen" style="position: relative; top: 0px; right:-100px; width: 80px; height: 30px; background-color: rgb(153, 247, 213);" OnClick="Scren()"></div>
+<script>
+    function WindStat() {
+     alert("Текущая строка состояния: " + window.status);
+     window.status = "WinStatus is " + Math.floor(Math.random()* 100);
+    }
+</script>
+<script>
+function Scren() {
+      var screenInfo = "Ширина: " + window.screen.width + "\n" +
+                       "Высота: " + window.screen.height + "\n" +
+                       "Глубина цвета: " + window.screen.colorDepth + "\n" +
+                       "Ориентация: " + (window.screen.orientation.type);
+      var isConfirmed = confirm("Информация о параметрах экрана:\n\n" + screenInfo);
+	if (isConfirmed) {
+        alert(screenInfo);}
+}
+</script>
+<script>
+    function changeStat() {
+     window.status = "Читай текст!";
+     alert("Текущая строка состояния: " + window.status);
+    }
+</script>
+<script>
+    function change() {
+     window.status = "Продолжение работы";
+    }
+</script>
+<script>
+function changeParagraphStyle(element) {
+      element.style.marginRight = "3cm"; 
+      element.style.textIndent = "2.5cm"; 
+    }
+    function restoreParagraphStyle(element) {
+      element.style.marginRight = "";
+      element.style.textIndent = ""; 
+    }
+</script>
+ <script>
+    // Функция для применения альтернативного стиля при наведении мыши
+    function applyAlternativeStyle(cell) {
+      cell.className = "alternative";
+    }
+
+    // Функция для восстановления исходного стиля при отведении мыши
+    function restoreNormalStyle(cell) {
+      cell.className = "normal";
+    }
+  </script>
+</body>
+</html>
